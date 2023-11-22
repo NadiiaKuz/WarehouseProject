@@ -35,44 +35,44 @@
 
             SuspendLayout();
 
-            labelCategoryName = new Label();
-            textBoxCategoryName = new TextBox();
-            labelCategoryDescription = new Label();
-            textBoxCategoryDescription = new TextBox();
-            buttonSave = new Button();
+            _labelCategoryName = new Label();
+            _textBoxCategoryName = new TextBox();
+            _'labelCategoryDescription = new Label();
+            _textBoxCategoryDescription = new TextBox();
+            _buttonSave = new Button();
 
-            labelCategoryName.AutoSize = true;
-            labelCategoryName.Location = new Point(20, 20);
-            labelCategoryName.Name = "labelCategoryName";
-            labelCategoryName.Size = new Size(100, 20);
-            labelCategoryName.Text = "Category Name";
+            _labelCategoryName.AutoSize = true;
+            _labelCategoryName.Location = new Point(20, 20);
+            _labelCategoryName.Name = "labelCategoryName";
+            _labelCategoryName.Size = new Size(100, 20);
+            _labelCategoryName.Text = "Category Name";
 
-            textBoxCategoryName.Location = new Point(20, 45);
-            textBoxCategoryName.Name = "textBoxCategoryName";
-            textBoxCategoryName.Size = new Size(200, 27);
+            _textBoxCategoryName.Location = new Point(20, 45);
+            _textBoxCategoryName.Name = "textBoxCategoryName";
+            _textBoxCategoryName.Size = new Size(200, 27);
 
-            labelCategoryDescription.AutoSize = true;
-            labelCategoryDescription.Location = new Point(textBoxCategoryName.Left, textBoxCategoryName.Bottom + 20);
-            labelCategoryDescription.Name = "labelCategoryDescription";
-            labelCategoryDescription.Size = new Size(100, 20);
-            labelCategoryDescription.Text = "Category Description";
+            _'labelCategoryDescription.AutoSize = true;
+            _'labelCategoryDescription.Location = new Point(_textBoxCategoryName.Left, _textBoxCategoryName.Bottom + 20);
+            _'labelCategoryDescription.Name = "labelCategoryDescription";
+            _'labelCategoryDescription.Size = new Size(100, 20);
+            _'labelCategoryDescription.Text = "Category Description";
 
-            textBoxCategoryDescription.Location = new Point(labelCategoryDescription.Left, labelCategoryDescription.Bottom + 10);
-            textBoxCategoryDescription.Name = "textBoxCategoryDescription";
-            textBoxCategoryDescription.Size = new Size(200, 27);
+            _textBoxCategoryDescription.Location = new Point(_'labelCategoryDescription.Left, _'_labelCategoryDescription.Bottom + 10);
+            _textBoxCategoryDescription.Name = "textBoxCategoryDescription";
+            _textBoxCategoryDescription.Size = new Size(200, 27);
 
-            buttonSave.Location = new Point(textBoxCategoryDescription.Left, textBoxCategoryDescription.Bottom + 20);
-            buttonSave.Name = "buttonSave";
-            buttonSave.Size = new Size(75, 23);
-            buttonSave.Text = "Save";
-            buttonSave.UseVisualStyleBackColor = true;
-            buttonSave.Click += new EventHandler(ButtonSave_Click);
+            _buttonSave.Location = new Point(_textBoxCategoryDescription.Left, _textBoxCategoryDescription.Bottom + 20);
+            _buttonSave.Name = "buttonSave";
+            _buttonSave.Size = new Size(75, 23);
+            _buttonSave.Text = "Save";
+            _buttonSave.UseVisualStyleBackColor = true;
+            _buttonSave.Click += new EventHandler(ButtonSave_Click);
 
-            Controls.Add(labelCategoryName);
-            Controls.Add(textBoxCategoryName);
-            Controls.Add(labelCategoryDescription);
-            Controls.Add(textBoxCategoryDescription);
-            Controls.Add(buttonSave);
+            Controls.Add(_labelCategoryName);
+            Controls.Add(_textBoxCategoryName);
+            Controls.Add(_'labelCategoryDescription);
+            Controls.Add(_textBoxCategoryDescription);
+            Controls.Add(_buttonSave);
             Name = "AddCategoryForm";
             Text = "Add New Category";
             ResumeLayout(false);

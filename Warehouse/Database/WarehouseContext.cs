@@ -1,20 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Warehouse.Helpers;
 using Warehouse.Models;
 
 namespace Warehouse.Database
 {
     public class WarehouseContext : DbContext
     {
-        public WarehouseContext() : base()
-        {
-        }
-
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+        public WarehouseContext() : base()
+        {
+            Database.EnsureCreated();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseSqlServer("Data Source=SLAVIK;Initial Catalog=WarehouseDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            => optionsBuilder.UseSqlServer("Server=LocalHost;Database=TestDB111;Trusted_Connection=true;TrustServerCertificate=true");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

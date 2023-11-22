@@ -15,7 +15,6 @@ namespace Warehouse.Logic
 
         public void AddProduct(Product product)
         {
-
             Category? category = null;
 
             if (product.CategoryID != 0)

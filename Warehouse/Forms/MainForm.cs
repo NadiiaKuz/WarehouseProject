@@ -6,12 +6,12 @@ namespace Warehouse
 {
     public partial class MainForm : Form
     {
-        private DataGridView dgvProducts = null!;
-        private Button btnAddProduct = null!;
-        private Button btnFilterProduct = null!;
-        private TextBox textBoxFilter = null!;
-
         private readonly WarehouseService _warehouseService;
+
+        private DataGridView _dgvProducts = null!;
+        private Button _btnAddProduct = null!;
+        private Button _btnFilterProduct = null!;
+        private TextBox _textBoxFilter = null!;
 
         public MainForm()
         {
@@ -28,8 +28,8 @@ namespace Warehouse
             {
                 var products = _warehouseService.GetProducts();
 
-                dgvProducts.DataSource = products;
-                dgvProducts.Columns["Category"].Visible = false;
+                _dgvProducts.DataSource = products;
+                _dgvProducts.Columns["Category"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -41,11 +41,11 @@ namespace Warehouse
         {
             try
             {
-                if (dgvProducts.CurrentRow.Index != -1)
+                if (_dgvProducts.CurrentRow.Index != -1)
                 {
-                    int productId = Convert.ToInt32(dgvProducts.CurrentRow.Cells["ProductID"].Value);
+                    int productId = Convert.ToInt32(_dgvProducts.CurrentRow.Cells["ProductID"].Value);
 
-                    var product = ((List<Product>)dgvProducts.DataSource)
+                    var product = ((List<Product>)_dgvProducts.DataSource)
                         .First(x => x.ProductId == productId);
 
                     ProductForm editForm = new ProductForm(_warehouseService, product);
@@ -79,7 +79,7 @@ namespace Warehouse
         {
             try
             {
-                var filter = textBoxFilter.Text;
+                var filter = _textBoxFilter.Text;
 
                 if (String.IsNullOrEmpty(filter))
                 {
@@ -87,7 +87,7 @@ namespace Warehouse
                     return;
                 }
 
-                dgvProducts.DataSource = _warehouseService.GetProductsByNameLike(filter);
+                _dgvProducts.DataSource = _warehouseService.GetProductsByNameLike(filter);
             }
             catch (Exception ex)
             {

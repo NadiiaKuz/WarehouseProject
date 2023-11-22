@@ -1,23 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Warehouse.Models;
+﻿using Warehouse.Models;
 
 namespace Warehouse.Forms
 {
     public partial class CategoryForm : Form
     {
-        private Label labelCategoryName;
-        private TextBox textBoxCategoryName;
-        private Label labelCategoryDescription;
-        private TextBox textBoxCategoryDescription;
-        private Button buttonSave;
+        private Label _labelCategoryName;
+        private TextBox _textBoxCategoryName;
+        private Label _labelCategoryDescription;
+        private TextBox _textBoxCategoryDescription;
+        private Button _buttonSave;
 
         public Category NewCategory { get; private set; }
 
@@ -28,8 +19,8 @@ namespace Warehouse.Forms
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            string categoryName = textBoxCategoryName.Text.Trim();
-            string categoryDescription = textBoxCategoryDescription.Text.Trim();
+            string categoryName = _textBoxCategoryName.Text.Trim();
+            string categoryDescription = _textBoxCategoryDescription.Text.Trim();
 
             if (string.IsNullOrEmpty(categoryName))
             {

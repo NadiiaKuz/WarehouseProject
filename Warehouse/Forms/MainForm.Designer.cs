@@ -38,32 +38,32 @@
             lblProducts.Text = "Товари";
             lblProducts.Location = new System.Drawing.Point(20, 0);
 
-            dgvProducts = new DataGridView();
-            dgvProducts.Location = new System.Drawing.Point(lblProducts.Left, lblProducts.Bottom + 5);
-            dgvProducts.Size = new System.Drawing.Size(ClientSize.Width - 60, ClientSize.Height - 120);
-            dgvProducts.DoubleClick += new EventHandler(dgvProducts_DoubleClick);
+            _dgvProducts = new DataGridView();
+            _dgvProducts.Location = new System.Drawing.Point(lblProducts.Left, lblProducts.Bottom + 5);
+            _dgvProducts.Size = new System.Drawing.Size(ClientSize.Width - 60, ClientSize.Height - 120);
+            _dgvProducts.DoubleClick += new EventHandler(dgvProducts_DoubleClick);
 
-            btnAddProduct = new Button();
-            btnAddProduct.Click += new EventHandler(btnAddProduct_Click);
-            btnAddProduct.Text = "Додати Товар";
-            btnAddProduct.Location = new System.Drawing.Point(dgvProducts.Left, dgvProducts.Bottom + 10);
-            btnAddProduct.Size = new System.Drawing.Size(120, 70);
+            _btnAddProduct = new Button();
+            _btnAddProduct.Click += new EventHandler(btnAddProduct_Click);
+            _btnAddProduct.Text = "Додати Товар";
+            _btnAddProduct.Location = new System.Drawing.Point(_dgvProducts.Left, _dgvProducts.Bottom + 10);
+            _btnAddProduct.Size = new System.Drawing.Size(120, 70);
 
-            btnFilterProduct = new Button();
-            btnFilterProduct.Text = "Фільтр Товарів";
-            btnFilterProduct.Location = new System.Drawing.Point(btnAddProduct.Right + 20, dgvProducts.Bottom + 10);
-            btnFilterProduct.Size = new System.Drawing.Size(120, 70);
-            btnFilterProduct.Click += new EventHandler(btnFilterProduct_Click);
+            _btnFilterProduct = new Button();
+            _btnFilterProduct.Text = "Фільтр Товарів";
+            _btnFilterProduct.Location = new System.Drawing.Point(_btnAddProduct.Right + 20, _dgvProducts.Bottom + 10);
+            _btnFilterProduct.Size = new System.Drawing.Size(120, 70);
+            _btnFilterProduct.Click += new EventHandler(btnFilterProduct_Click);
 
-            textBoxFilter = new TextBox();
-            textBoxFilter.Location = new System.Drawing.Point(btnFilterProduct.Right + 20, dgvProducts.Bottom + 10);
-            textBoxFilter.Size = new System.Drawing.Size(120, 40);
+            _textBoxFilter = new TextBox();
+            _textBoxFilter.Location = new System.Drawing.Point(_btnFilterProduct.Right + 20, _dgvProducts.Bottom + 10);
+            _textBoxFilter.Size = new System.Drawing.Size(120, 40);
 
             this.Controls.Add(lblProducts);
-            this.Controls.Add(dgvProducts);
-            this.Controls.Add(btnAddProduct);
-            this.Controls.Add(btnFilterProduct);
-            this.Controls.Add(textBoxFilter);
+            this.Controls.Add(_dgvProducts);
+            this.Controls.Add(_btnAddProduct);
+            this.Controls.Add(_btnFilterProduct);
+            this.Controls.Add(_textBoxFilter);
         }
 
         #endregion
